@@ -5,8 +5,8 @@ const doc = {
     title: 'AFinder Recipe API',
     description: 'Recipe API',
   },
-  host: 'localhost:8080',
-  schemes: ['http'],
+  host: 'cse341-node-project-1.herokuapp.com',
+  schemes: ['https'],
 };
 
 const outputFile = './swagger.json';
