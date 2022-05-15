@@ -1,13 +1,25 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const mongodb = require('./db/connect')
+const morgan = require('morgan')
+const exphbs = require('express-handlebars')
 
 
 const port = process.env.PORT || 8080;
 const app = express();
 
 
+// Logging
+if (process.env.NODE_ENV === 'development') {
+    app.use(morgan('test'))
+}
 
+// Handlebars
+app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}))
+app.set('view engine', '.hbs');
+
+// Routes
+app.use('/', require('./routes/index'))
 
 
 app

@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon server.js",
-    "start": " node server.js",
+    "test": "cross-env NODE_ENV=development nodemon server.js",
+    "start": "cross-env NODE_ENV=production node server.js",
     "swagger": "node ./swagger.js"
   },
   "repository": {
